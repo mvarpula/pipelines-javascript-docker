@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mvarpulapipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mvarpulapipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: mvarpulapipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: mvarpulapipelinesjavascriptdocker 
+          image: mvcontregistry.azurecr.io/mvarpulapipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
